@@ -1,0 +1,5 @@
+.vercel
+node_modules
+.taste-skill
+.DS_Store
+Thumbs.db
