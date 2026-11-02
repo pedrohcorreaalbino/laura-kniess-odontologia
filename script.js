@@ -108,7 +108,7 @@
   /* ---------- Scroll Reveal com IntersectionObserver ---------- */
   if (!reduceMotion && 'IntersectionObserver' in window) {
     // Escalonamento de atraso entre elementos irmãos
-    document.querySelectorAll('.cards, .gallery, .details-strip, .accordion').forEach((group) => {
+    document.querySelectorAll('.cards, .structure__grid, .gallery, .details-strip, .accordion').forEach((group) => {
       [...group.querySelectorAll(':scope > .reveal')].forEach((el, i) => {
         el.style.setProperty('--d', `${(i * 0.08).toFixed(2)}s`);
       });

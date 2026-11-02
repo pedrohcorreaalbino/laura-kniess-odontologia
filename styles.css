@@ -844,6 +844,81 @@ p { text-wrap: pretty; }
 }
 
 /* =========================================================
+   NOSSA ESTRUTURA (Bento Grid Assimétrico de Luxo)
+   ========================================================= */
+.structure {
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+}
+
+.structure__grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 340px 300px;
+  gap: 1.4rem;
+}
+
+.structure__item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line);
+  background: var(--bg-alt);
+  box-shadow: var(--shadow-xs);
+  isolation: isolate;
+  transition: box-shadow 0.45s var(--ease), border-color 0.45s var(--ease);
+}
+
+.structure__item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--ease);
+  will-change: transform;
+}
+
+.structure__item:hover {
+  box-shadow: var(--shadow-md);
+  border-color: rgba(184, 155, 106, 0.4);
+}
+
+.structure__item:hover img {
+  transform: scale(1.03);
+}
+
+/* Distribuição Bento Grid (12 colunas) */
+.structure__item--reception {
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+.structure__item--office {
+  grid-column: span 5;
+  grid-row: span 1;
+}
+
+.structure__item--office img {
+  object-position: center 60%;
+}
+
+.structure__item--sign {
+  grid-column: span 3;
+  grid-row: span 1;
+}
+
+.structure__item--coffee {
+  grid-column: span 4;
+  grid-row: span 1;
+}
+
+.structure__item--lounge {
+  grid-column: span 4;
+  grid-row: span 1;
+}
+
+/* =========================================================
    RESULTADOS (Imagens Limpas sem Tags, Falando por Si Só)
    ========================================================= */
 .results {
@@ -1441,6 +1516,7 @@ p { text-wrap: pretty; }
   .nav.is-open .nav__list li:nth-child(4) { animation-delay: 0.15s; }
   .nav.is-open .nav__list li:nth-child(5) { animation-delay: 0.2s; }
   .nav.is-open .nav__list li:nth-child(6) { animation-delay: 0.25s; }
+  .nav.is-open .nav__list li:nth-child(7) { animation-delay: 0.3s; }
 
   .nav__cta-mobile {
     display: inline-flex;
@@ -1463,6 +1539,28 @@ p { text-wrap: pretty; }
 
   .about__visual { max-width: 440px; margin-inline: auto; width: 100%; }
   .cards { grid-template-columns: repeat(2, 1fr); }
+  .structure__grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-auto-rows: 280px;
+  }
+  .structure__item--reception {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+  .structure__item--office {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .structure__item--sign,
+  .structure__item--coffee,
+  .structure__item--lounge {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .structure__item--lounge {
+    grid-column: span 2;
+  }
   .section__head--split { grid-template-columns: 1fr; }
   .section__head--split .section__lead { justify-self: start; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
@@ -1494,6 +1592,22 @@ p { text-wrap: pretty; }
 
   .cards { grid-template-columns: 1fr; }
   .card { padding: 2.2rem 1.6rem 1.8rem; }
+
+  .structure__grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 290px;
+  }
+  .structure__item--reception,
+  .structure__item--office,
+  .structure__item--sign,
+  .structure__item--coffee,
+  .structure__item--lounge {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .structure__item--reception {
+    height: 360px;
+  }
 
   .gallery { grid-template-columns: 1fr; grid-auto-rows: 280px; }
   .gallery__item--tall { grid-row: span 1; }
