@@ -854,7 +854,7 @@ p { text-wrap: pretty; }
 .structure__grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 340px 300px;
+  grid-template-rows: 340px 300px 310px;
   gap: 1.4rem;
 }
 
@@ -888,7 +888,7 @@ p { text-wrap: pretty; }
   transform: scale(1.03);
 }
 
-/* Distribuição Bento Grid (12 colunas) */
+/* Distribuição Bento Grid (12 colunas, 3 linhas — 8 fotos) */
 .structure__item--reception {
   grid-column: span 4;
   grid-row: span 2;
@@ -900,7 +900,7 @@ p { text-wrap: pretty; }
 }
 
 .structure__item--office img {
-  object-position: center 60%;
+  object-position: center 62%;
 }
 
 .structure__item--sign {
@@ -913,7 +913,30 @@ p { text-wrap: pretty; }
   grid-row: span 1;
 }
 
+.structure__item--chair {
+  grid-column: span 4;
+  grid-row: span 1;
+}
+
+.structure__item--chair img {
+  object-position: center 45%;
+}
+
 .structure__item--lounge {
+  grid-column: span 3;
+  grid-row: span 1;
+}
+
+.structure__item--planning {
+  grid-column: span 5;
+  grid-row: span 1;
+}
+
+.structure__item--planning img {
+  object-position: center 55%;
+}
+
+.structure__item--view {
   grid-column: span 4;
   grid-row: span 1;
 }
@@ -1544,21 +1567,21 @@ p { text-wrap: pretty; }
     grid-template-rows: auto;
     grid-auto-rows: 280px;
   }
-  .structure__item--reception {
-    grid-column: span 1;
-    grid-row: span 2;
-  }
-  .structure__item--office {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
+  .structure__item--reception,
+  .structure__item--office,
   .structure__item--sign,
   .structure__item--coffee,
-  .structure__item--lounge {
+  .structure__item--chair,
+  .structure__item--lounge,
+  .structure__item--planning,
+  .structure__item--view {
     grid-column: span 1;
     grid-row: span 1;
   }
-  .structure__item--lounge {
+  .structure__item--reception {
+    grid-row: span 2;
+  }
+  .structure__item--planning {
     grid-column: span 2;
   }
   .section__head--split { grid-template-columns: 1fr; }
@@ -1601,7 +1624,10 @@ p { text-wrap: pretty; }
   .structure__item--office,
   .structure__item--sign,
   .structure__item--coffee,
-  .structure__item--lounge {
+  .structure__item--chair,
+  .structure__item--lounge,
+  .structure__item--planning,
+  .structure__item--view {
     grid-column: span 1;
     grid-row: span 1;
   }
